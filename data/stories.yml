@@ -1,0 +1,46 @@
+version: "3.1"
+
+stories:
+
+- story: User provides age and gets access status
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+  - intent: provide_age
+    entities:
+      - age: 17
+  - slot_was_set:
+      - age: 17
+  - action: action_check_age
+
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: user affirms
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- story: user denies
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- story: user feels great
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+- story: user feels unhappy
+  steps:
+  - intent: mood_unhappy
+  - action: utter_sad
+
+
+
+
+- story: user asks if bot
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

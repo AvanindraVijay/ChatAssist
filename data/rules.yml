@@ -1,0 +1,42 @@
+version: "3.1"
+
+rules:
+- rule: Respond to age input with access status
+  steps:
+  - intent: provide_age
+  - action: action_check_age
+
+- rule: Greet the user
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye to user
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Handle user affirmation
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- rule: Handle user denial
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- rule: React to happy mood
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+
+- rule: React to unhappy mood
+  steps:
+  - intent: mood_unhappy
+  - action: utter_sad
+
+- rule: Handle bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
